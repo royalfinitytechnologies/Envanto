@@ -4,13 +4,17 @@ export async function GET() {
   try {
     await connectDB();
 
-    // TEMP TEST (remove later)
-    return Response.json({ success: true, message: "Admin API working" });
+    // 🔥 FORCE TEST
+    return Response.json({ success: true, step: "DB connected" });
 
   } catch (error) {
-    console.error("ADMIN CHECK ERROR:", error);
+    console.error("🔥 REAL ERROR:", error);
+
     return Response.json(
-      { error: error.message || "Failed to check admin status" },
+      {
+        error: "Failed to check admin status",
+        details: error.message || error.toString(), // 👈 IMPORTANT
+      },
       { status: 500 }
     );
   }
