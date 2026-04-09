@@ -2,9 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Check, Sparkles } from "lucide-react";
 
-// 👇 pura tumhara code yahan
 export default function PricingClient() {
-  // same code as before
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // fetch logic
+  }, []);
+
+  return (
+    <div>
+      Pricing Page
+    </div>
+  );
 }
